@@ -1,0 +1,128 @@
+{
+	"info": {
+		"_postman_id": "63ee34f4-c11c-4054-8a35-71cae062b5cd",
+		"name": "TestMentorNode",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23245646"
+	},
+	"item": [
+		{
+			"name": "CheckScore",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"idQ\": 1,\r\n        \"tblAnswer\": [\r\n            {\r\n                \"idA\": 1,\r\n                \"idQ\": 1,\r\n                \"answerContent\": \"NULL\"\r\n            },\r\n            {\r\n                \"idA\": 2,\r\n                \"idQ\": 1,\r\n                \"answerContent\": \"NULL\"\r\n            },\r\n            {\r\n                \"idA\": 4,\r\n                \"idQ\": 1,\r\n                \"answerContent\": \"NULL\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"idQ\": 2,\r\n        \"tblAnswer\": [\r\n            {\r\n                \"idA\": 14,\r\n                \"idQ\": 2,\r\n                \"answerContent\": \"NULL\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"idQ\": 3,\r\n        \"tblAnswer\": [\r\n            {\r\n                \"idA\": 17,\r\n                \"idQ\": 3,\r\n                \"answerContent\": \"NULL\"\r\n            }\r\n        ]\r\n    }, \r\n    {\r\n        \"idQ\": 6,\r\n        \"tblAnswer\": [\r\n            {\r\n                \"idA\": 26,\r\n                \"idQ\": 6,\r\n                \"answerContent\": \"NULL\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"idQ\": 5,\r\n        \"tblAnswer\": [\r\n            {\r\n                \"idA\": 25,\r\n                \"idQ\": 5,\r\n                \"answerContent\": \"mực\"\r\n            }\r\n        ]\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/checkingAnswer",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"checkingAnswer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\":\"ThanhDao\",\r\n    \"pass_word\":\"1231a\",\r\n    \"email\":\"quangquyendad@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\":\"ThanhDao\",\r\n    \"pass_word\":\"1231a\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getListTest",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/listTest",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"listTest"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getScoreByIdUser",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/score/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"score",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
