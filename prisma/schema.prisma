@@ -1,0 +1,42 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model score {
+  id        Int        @id @default(autoincrement())
+  userId    Int?
+  score     Int?
+  userCyber userCyber? @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "score_ibfk_1")
+
+  @@index([userId], map: "userId")
+}
+
+model tblAnswer {
+  idA           Int           @id @default(autoincrement())
+  idQ           Int?
+  contentA      String?       @db.VarChar(255)
+  answerTrue    Boolean?
+  answerContent String?       @db.VarChar(100)
+  tblQuestions  tblQuestions? @relation(fields: [idQ], references: [idQ], onDelete: NoAction, onUpdate: NoAction, map: "tblAnswer_ibfk_1")
+
+  @@index([idQ], map: "idQ")
+}
+
+model tblQuestions {
+  idQ       Int         @id @default(autoincrement())
+  contentQ  String?     @db.VarChar(255)
+  tblAnswer tblAnswer[]
+}
+
+model userCyber {
+  id        Int     @id @default(autoincrement())
+  userName  String? @db.VarChar(255)
+  pass_word String  @db.VarChar(100)
+  email     String  @db.VarChar(100)
+  score     score[]
+}
